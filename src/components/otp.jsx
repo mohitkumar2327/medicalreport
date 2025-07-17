@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { verifyOtp, resetOtpState } from '../redux/otpSlice';
 import { useNavigate } from 'react-router-dom';
-
+import './yt.css';
 const Otp = () => {
   const [otp, setOtp] = useState('');
   const dispatch = useDispatch();

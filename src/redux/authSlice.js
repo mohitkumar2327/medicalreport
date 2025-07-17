@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-
 // Mock user database
-let users = [];
+let users = []; // In a real app, this would be an API call to a backend
 
 export const signup = createAsyncThunk(
   'auth/signup',
@@ -11,30 +10,26 @@ export const signup = createAsyncThunk(
       if (users.some(user => user.email === userData.email)) {
         throw new Error('Email already exists. Please use a different email.');
       }
-
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
       // Add user to mock database
       users.push(userData);
-      
       return { user: { name: userData.name, email: userData.email }, signupData: userData };
     } catch (error) {
       return rejectWithValue(error.message || 'An unexpected error occurred during signup.')
     }
   }
 )
-
 export const login = createAsyncThunk(
   'auth/login',
   async (credentials, { rejectWithValue }) => {
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Check if user exists and password matches
       const user = users.find(u => u.email === credentials.email && u.password === credentials.password);
-      
+
       if (user) {
         return { user: { name: user.name, email: user.email } };
       } else {
@@ -60,6 +55,10 @@ const authSlice = createSlice({
   reducers: {
     clearError: (state) => {
       state.error = null;
+    },
+    // ADD THIS REDUCER
+    setError: (state, action) => {
+      state.error = action.payload;
     },
     logout: (state) => {
       state.user = null;
@@ -100,6 +99,6 @@ const authSlice = createSlice({
       });
   },
 });
-
-export const { clearError, logout } = authSlice.actions;
+// EXPORT THE NEW ACTION
+export const { clearError, setError, logout } = authSlice.actions; // <--- Added setError here
 export default authSlice.reducer;

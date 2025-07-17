@@ -112,7 +112,7 @@ function Login() {
     try {
       const result = await dispatch(login({ email, password })).unwrap()
       console.log('Login successful:', result)
-      navigate('/pages')
+      navigate('/homepage')
     } catch (error) {
       console.log('Login error:', error)
       // Don't navigate on error - let the error display in the UI

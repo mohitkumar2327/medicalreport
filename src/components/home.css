@@ -1,0 +1,71 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+  background-color: #510bc3; /* Same as .login-pg background */
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+.home-container {
+  background-color: #1a1a1a; /* Matches .login-container */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+  color: #ffffff;
+}
+
+.home-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.home-container h2,
+.home-container h3 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+  border-bottom: 1px solid #646cff;
+  padding-bottom: 4px;
+}
+
+.home-container label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 500;
+}
+
+.home-container input[type="text"],
+.home-container input[type="email"],
+.home-container input[type="tel"],
+.home-container textarea,
+.home-container select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #2c2c2c;
+  color: #ffffff;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.home-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.home-container input[type="radio"] {
+  margin-right: 6px;
+}
+
+.home-container button {
+  margin-top: 20px;
+  width: 100%;
+}
